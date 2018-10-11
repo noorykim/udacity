@@ -16,7 +16,7 @@ def read_text(path_to_text_file_in_quotes):
 
 def check_profanity(text_to_check):
 	userdata = {"q": text_to_check}
-	resp = requests.get("http://www.wdylike.appspot.com", params=to_query)		# send query to webpage
+	resp = requests.get("http://www.wdylike.appspot.com", params=to_query)		# send query to webpage (Google profanity checker)
 	tf = resp.text									# retrieve webpage response text
 	# print(tf)
 	if "true" in tf:
@@ -25,3 +25,4 @@ def check_profanity(text_to_check):
 		print("no curse words were found")
 
 read_text("C:/.../movie_quotes.txt")
+## https://s3.amazonaws.com/udacity-hosted-downloads/ud036/movie_quotes.txt
