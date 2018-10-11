@@ -1,8 +1,8 @@
-import requests
+import requests  # for interacting with webpages online
 
 def read_text(path_to_text_file_in_quotes):
-	openfile = open(path_to_text_file_in_quotes) 
-	contents = openfile.read()
+	openfile = open(path_to_text_file_in_quotes) 	# open a text file
+	contents = openfile.read()			# read a text file
 	# print(contents)
 
 	## check line by line
@@ -16,8 +16,8 @@ def read_text(path_to_text_file_in_quotes):
 
 def check_profanity(text_to_check):
 	userdata = {"q": text_to_check}
-	resp = requests.get("http://www.wdylike.appspot.com", params=to_query)
-	tf = resp.text
+	resp = requests.get("http://www.wdylike.appspot.com", params=to_query)		# send query to webpage
+	tf = resp.text									# retrieve webpage response text
 	# print(tf)
 	if "true" in tf:
 		print("alert")
